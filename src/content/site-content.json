@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026.08.24",
+  "home": {
+    "hero": {
+      "eyebrow": "HUMAN-DIRECTED SYSTEMS. CLEAR BOUNDARIES.",
+      "brand": "crossingkey",
+      "statement": "intelligence is the standard.",
+      "body": "I design practical AI, automation, digital operations, local-first tools, and implementation resources for people who want work that survives contact with reality."
+    }
+  },
+  "resources": {
+    "eyebrow": "DOCUMENTATION ARCHIVE",
+    "headline": "See the standard. Buy the operating depth.",
+    "supportingCopy": "I publish public orientation notes that explain the problem space and my operating position. Reusable methods, prompts, blueprints, templates, decision logic, and implementation detail remain inside paid releases or private engagements.",
+    "primaryCta": "Explore public previews",
+    "secondaryCta": "Get the Operator Vault",
+    "articles": [
+      {
+        "slug": "ai-without-the-noise",
+        "route": "/resources/ai-without-the-noise",
+        "title": "AI without the noise",
+        "description": "AI is useful when the job, evidence boundary, authority, and expected result are clear. This note defines the territory without publishing the reusable operating method.",
+        "readingTime": "2 minute public preview",
+        "sections": [
+          {
+            "heading": "Public orientation",
+            "paragraphs": [
+              "AI is useful when the job, evidence boundary, authority, and expected result are clear. This note defines the territory without publishing the reusable operating method.",
+              "CrossingKey public documentation is intentionally descriptive rather than reconstructive. It shows what I value and what a buyer can expect without transferring the method, private architecture, or reusable implementation assets."
+            ]
+          }
+        ],
+        "takeaways": [
+          "Understand the capability boundary.",
+          "Know why verification matters.",
+          "Get the implementation system in the Operator Vault."
+        ]
+      },
+      {
+        "slug": "what-an-agent-is",
+        "route": "/resources/what-an-agent-is",
+        "title": "What an agent actually is",
+        "description": "Agents, automations, and chat systems carry different levels of authority and operational risk. This note explains the distinction at a decision level while keeping CrossingKey implementation patterns private.",
+        "readingTime": "2 minute public preview",
+        "sections": [
+          {
+            "heading": "Public orientation",
+            "paragraphs": [
+              "Agents, automations, and chat systems carry different levels of authority and operational risk. This note explains the distinction at a decision level while keeping CrossingKey implementation patterns private.",
+              "CrossingKey public documentation is intentionally descriptive rather than reconstructive. It shows what I value and what a buyer can expect without transferring the method, private architecture, or reusable implementation assets."
+            ]
+          }
+        ],
+        "takeaways": [
+          "Choose systems by the job, not the label.",
+          "Treat tool authority as an operational boundary.",
+          "Detailed agent patterns remain paid/private."
+        ]
+      },
+      {
+        "slug": "your-first-operator-loop",
+        "route": "/resources/your-first-operator-loop",
+        "title": "Your first operator loop",
+        "description": "Reliable AI work needs a defined outcome, trustworthy inputs, review, and evidence. The complete reusable loop, templates, and acceptance structures are not published on the public site.",
+        "readingTime": "2 minute public preview",
+        "sections": [
+          {
+            "heading": "Public orientation",
+            "paragraphs": [
+              "Reliable AI work needs a defined outcome, trustworthy inputs, review, and evidence. The complete reusable loop, templates, and acceptance structures are not published on the public site.",
+              "CrossingKey public documentation is intentionally descriptive rather than reconstructive. It shows what I value and what a buyer can expect without transferring the method, private architecture, or reusable implementation assets."
+            ]
+          }
+        ],
+        "takeaways": [
+          "Define the outcome before adding complexity.",
+          "Keep consequential authority explicit.",
+          "Use the paid operating materials for the reusable method."
+        ]
+      },
+      {
+        "slug": "prompting-is-not-training",
+        "route": "/resources/prompting-is-not-training",
+        "title": "Prompting is not training",
+        "description": "Prompting, retrieval, tools, memory, and fine-tuning solve different problems. This note keeps the distinction clear without publishing CrossingKey prompt systems, routing methods, evaluation assets, or training workflows.",
+        "readingTime": "2 minute public preview",
+        "sections": [
+          {
+            "heading": "Public orientation",
+            "paragraphs": [
+              "Prompting, retrieval, tools, memory, and fine-tuning solve different problems. This note keeps the distinction clear without publishing CrossingKey prompt systems, routing methods, evaluation assets, or training workflows.",
+              "CrossingKey public documentation is intentionally descriptive rather than reconstructive. It shows what I value and what a buyer can expect without transferring the method, private architecture, or reusable implementation assets."
+            ]
+          }
+        ],
+        "takeaways": [
+          "Use the right mechanism for the problem.",
+          "Do not confuse prompting with model training.",
+          "Implementation assets remain paid/private."
+        ]
+      }
+    ],
+    "vault": {
+      "eyebrow": "PRIVATE RELEASE",
+      "title": "The CrossingKey AI Operator Vault · Volume I",
+      "description": "A paid CrossingKey operating release for buyers who want reusable AI workflows, controls, prompts, blueprints, evaluation assets, and implementation guidance beyond the public orientation layer.",
+      "includes": [
+        "25 structured operator prompts",
+        "Agent blueprint cards",
+        "Context and memory templates",
+        "Evaluation starter kit",
+        "Fine-tuning decision tree and dataset-prep template",
+        "MCP and tool-permission guide",
+        "Cost-control and model-routing notes",
+        "Versioned updates and release notes"
+      ],
+      "launchPrice": "$29 launch edition",
+      "standardPrice": "$49 standard release"
+    }
+  }
+}

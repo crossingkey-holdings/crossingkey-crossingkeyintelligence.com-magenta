@@ -1,0 +1,12 @@
+{
+  "name": "crossingkey-intelligence",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-07-23",
+  "d1_databases": [
+    {
+      "binding": "CK_INTAKE_DB",
+      "database_name": "crossingkey-intake",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+    }
+  ]
+}

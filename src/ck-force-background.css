@@ -1,0 +1,113 @@
+/* CrossingKey full-page magenta circuit background takeover */
+:root {
+  --ck-bg-image: url('/ck-assets/ck-magenta-circuit-bg.png');
+  --ck-void: #020005;
+  --ck-silver: #d7d7df;
+  --ck-magenta: #ff149f;
+}
+
+html,
+body,
+#root,
+#app {
+  width: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  background: var(--ck-void) !important;
+  color: var(--ck-silver);
+}
+
+body {
+  min-height: 100vh !important;
+  overflow-x: hidden !important;
+  background-image: var(--ck-bg-image) !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image: var(--ck-bg-image);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  filter: saturate(1.15) contrast(1.08) brightness(.92);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 52% 50%, rgba(255,20,159,.14), transparent 22rem),
+    linear-gradient(90deg, rgba(0,0,0,.48), rgba(0,0,0,.08) 45%, rgba(0,0,0,.42)),
+    linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.72));
+}
+
+#root,
+#app {
+  position: relative !important;
+  z-index: 1 !important;
+  background: transparent !important;
+  min-height: 100vh !important;
+}
+
+main,
+section,
+article,
+header,
+footer,
+nav,
+aside,
+[class*='page'],
+[class*='Page'],
+[class*='layout'],
+[class*='Layout'],
+[class*='hero'],
+[class*='Hero'],
+[id*='hero'],
+[id*='Hero'] {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Kill the old oversized portrait/hero image layer without destroying normal icons/logos. */
+[class*='hero'] > img,
+[class*='Hero'] > img,
+[id*='hero'] > img,
+[id*='Hero'] > img,
+img[src*='Screenshot_2026'],
+img[src*='portrait'],
+img[src*='couple'],
+img[src*='chair'],
+img[src*='black-and-white'],
+img[src*='black_white'],
+img[src*='bw-'] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Keep panels glassy instead of flat black blocks. */
+.card,
+[class*='card'],
+[class*='Card'],
+[class*='panel'],
+[class*='Panel'],
+[class*='module'],
+[class*='Module'] {
+  background-color: rgba(4, 3, 9, .42) !important;
+  backdrop-filter: blur(14px) saturate(1.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
+  border-color: rgba(255, 20, 159, .22) !important;
+}

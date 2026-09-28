@@ -1,0 +1,141 @@
+:root {
+  --ck-income-bg: #050508;
+  --ck-income-panel: rgba(16, 16, 24, 0.96);
+  --ck-income-line: rgba(255, 43, 214, 0.3);
+  --ck-income-text: #f4f4f8;
+  --ck-income-muted: #b9b9c7;
+  --ck-income-accent: #ff2bd6;
+}
+
+[data-ck-category-card="true"] {
+  cursor: pointer;
+  position: relative;
+}
+
+[data-ck-category-card="true"]:focus-visible {
+  outline: 2px solid var(--ck-income-accent);
+  outline-offset: 4px;
+}
+
+[data-ck-category-card="true"]::after {
+  content: "Explore offers →";
+  display: block;
+  margin-top: 0.85rem;
+  color: var(--ck-income-accent);
+  font: 700 0.74rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ck-income-shell {
+  width: min(1160px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0 7rem;
+}
+
+.ck-income-kicker {
+  color: var(--ck-income-accent);
+  font: 700 0.74rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ck-income-title {
+  max-width: 940px;
+  margin: 0.7rem 0;
+  color: var(--ck-income-text);
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  line-height: 0.98;
+}
+
+.ck-income-lede {
+  max-width: 800px;
+  color: var(--ck-income-muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.ck-offer-grid,
+.ck-category-index {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.ck-category-index {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ck-offer-card,
+.ck-category-link {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.4rem;
+  border: 1px solid var(--ck-income-line);
+  border-radius: 22px;
+  background: var(--ck-income-panel);
+  color: var(--ck-income-text);
+  text-decoration: none;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.ck-offer-card h2,
+.ck-category-link h2 {
+  margin: 0.55rem 0;
+  font-size: 1.45rem;
+}
+
+.ck-offer-card p,
+.ck-category-link p,
+.ck-offer-card li {
+  color: var(--ck-income-muted);
+  line-height: 1.55;
+}
+
+.ck-price {
+  margin: 0.8rem 0;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.ck-offer-card ul {
+  padding-left: 1.15rem;
+}
+
+.ck-buy-button,
+.ck-category-button {
+  margin-top: auto;
+  appearance: none;
+  border: 1px solid var(--ck-income-line);
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  color: white;
+  background: linear-gradient(135deg, #a30986, var(--ck-income-accent));
+  font-weight: 850;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.ck-buy-status {
+  min-height: 1.2rem;
+  margin-top: 0.55rem;
+  color: var(--ck-income-muted);
+  font-size: 0.82rem;
+}
+
+.ck-income-back {
+  display: inline-block;
+  margin-bottom: 1.4rem;
+  color: var(--ck-income-text);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .ck-offer-grid,
+  .ck-category-index {
+    grid-template-columns: 1fr;
+  }
+}

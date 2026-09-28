@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" role="img" aria-label="CrossingKey Intelligence">
+  <defs>
+    <clipPath id="medallion-circle">
+      <circle cx="627" cy="627" r="627"/>
+    </clipPath>
+  </defs>
+  <image href="../assets/ck-medallion-silver.png" width="1254" height="1254" clip-path="url(#medallion-circle)"/>
+</svg>

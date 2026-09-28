@@ -1,0 +1,37 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.log
+.DS_Store
+npm-debug.log*
+.wrangler/
+.dev.vars
+.dev.vars.*
+.ck-backup-*/
+*.backup
+*.backup-*
+
+# CrossingKey local history / recovery artifacts
+.ck-approved-builds/
+.ck-backups/
+.ck_backups/
+.crossingkey-backups/
+.ck-cloudflare-restore/
+.ck-exchange-backup-*/
+backups/
+.visual_lock/
+.ck-vite-*.pid
+
+# Historical working copies
+*.bak
+*.before-*
+*.backup-*
+
+# Local generated/recovery artifacts
+*.tar.gz

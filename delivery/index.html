@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Verified Delivery | CrossingKey Intelligence</title>
+  <meta name="robots" content="noindex,nofollow">
+  <style>
+    :root{color-scheme:dark;--bg:#050508;--panel:#101018;--line:rgba(255,43,214,.28);--text:#f4f4f8;--muted:#b9b9c7;--accent:#ff2bd6}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at top right,rgba(255,43,214,.14),transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui}
+    main{width:min(920px,calc(100% - 2rem));margin:0 auto;padding:5rem 0}
+    .panel{background:rgba(16,16,24,.94);border:1px solid var(--line);border-radius:24px;padding:clamp(1.25rem,4vw,2.5rem);box-shadow:0 28px 100px rgba(0,0,0,.45)}
+    .eyebrow{font:700 .72rem/1.2 ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+    h1{font-size:clamp(2rem,6vw,4rem);margin:.55rem 0}
+    .muted{color:var(--muted);line-height:1.65}
+    .receipt,.delivery{display:grid;gap:.7rem;margin-top:1.4rem}
+    .row{display:grid;grid-template-columns:180px 1fr;gap:1rem;padding:.8rem;border-top:1px solid rgba(255,255,255,.08)}
+    ul,ol{line-height:1.65}
+    .actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.4rem}
+    button,a.button{appearance:none;border:1px solid var(--line);border-radius:999px;padding:.85rem 1.1rem;background:linear-gradient(135deg,#a30986,var(--accent));color:#fff;font-weight:800;text-decoration:none;cursor:pointer}
+    a.secondary{background:transparent}
+    .error{color:#ff9bad}.success{color:#9dffba}
+    @media(max-width:620px){.row{grid-template-columns:1fr}}
+  </style>
+<link rel="stylesheet" href="/assets/crossingkey/ck-category-income.css">
+</head>
+<body>
+<main>
+  <section class="panel">
+    <div class="eyebrow">Payment verification</div>
+    <h1 id="title">Checking your secure payment…</h1>
+    <p id="status" class="muted">CrossingKey is verifying the Stripe Checkout Session before releasing the paid packet.</p>
+    <div id="content"></div>
+  </section>
+</main>
+<script>
+(() => {
+  const sessionId = new URLSearchParams(location.search).get("session_id");
+  const title = document.querySelector("#title");
+  const status = document.querySelector("#status");
+  const content = document.querySelector("#content");
+
+  const escapeHtml = (value) => String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+  function buildPacket(data) {
+    return [
+      "# CrossingKey Verified Paid Packet",
+      "",
+      "Category: " + data.receipt.category_name,
+      "Offer: " + data.receipt.offer_name,
+      "Receipt: " + data.receipt.session_id,
+      "Amount: " + (data.receipt.amount_total / 100).toFixed(2) + " " + String(data.receipt.currency).toUpperCase(),
+      "Verified: " + data.receipt.verified_at,
+      "",
+      "## What you purchased",
+      data.delivery.promise,
+      "",
+      "## Deliverables",
+      ...data.delivery.deliverables.map(item => "- " + item),
+      "",
+      "## Complete this intake",
+      ...data.delivery.intake.map(item => "- " + item + ":"),
+      "",
+      "## Delivery instructions",
+      ...data.delivery.instructions.map((item, index) => (index + 1) + ". " + item),
+      "",
+      "Support: " + data.delivery.support_email
+    ].join("\n");
+  }
+
+  function downloadPacket(data) {
+    const blob = new Blob([buildPacket(data)], {
+      type: "text/markdown;charset=utf-8"
+    });
+    const objectUrl = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = objectUrl;
+    anchor.download = data.receipt.offer_id + "-verified-paid-packet.md";
+    anchor.click();
+    URL.revokeObjectURL(objectUrl);
+  }
+
+  async function verify() {
+    if (!sessionId) {
+      throw new Error("No Checkout Session ID was supplied.");
+    }
+
+    const response = await fetch(
+      "/api/checkout/status?session_id=" +
+        encodeURIComponent(sessionId),
+      { cache: "no-store" }
+    );
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || !data.paid) {
+      throw new Error(
+        data.error || "Payment is not yet verified."
+      );
+    }
+
+    title.textContent = "Payment verified";
+    status.textContent =
+      "Your receipt-backed paid packet is ready.";
+    status.className = "success";
+
+    content.innerHTML = `
+      <div class="receipt">
+        <div class="row"><strong>Category</strong><span>${escapeHtml(data.receipt.category_name)}</span></div>
+        <div class="row"><strong>Offer</strong><span>${escapeHtml(data.receipt.offer_name)}</span></div>
+        <div class="row"><strong>Amount</strong><span>${(data.receipt.amount_total / 100).toFixed(2)} ${escapeHtml(String(data.receipt.currency).toUpperCase())}</span></div>
+        <div class="row"><strong>Receipt</strong><span>${escapeHtml(data.receipt.session_id)}</span></div>
+      </div>
+      <div class="delivery">
+        <h2>What you purchased</h2>
+        <p class="muted">${escapeHtml(data.delivery.promise)}</p>
+        <h3>Deliverables</h3>
+        <ul>${data.delivery.deliverables.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        <h3>Information required</h3>
+        <ul>${data.delivery.intake.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+      </div>
+      <div class="actions">
+        <button id="download-packet" type="button">Download paid packet</button>
+        <a class="button secondary" href="mailto:${encodeURIComponent(data.delivery.support_email)}?subject=${encodeURIComponent("Verified paid order — " + data.receipt.offer_name + " — " + data.receipt.session_id)}">Return completed intake</a>
+      </div>
+    `;
+
+    document
+      .querySelector("#download-packet")
+      .addEventListener("click", () => downloadPacket(data));
+  }
+
+  verify().catch((error) => {
+    title.textContent = "Delivery not available yet";
+    status.textContent = error.message;
+    status.className = "error";
+    content.innerHTML =
+      '<div class="actions"><a class="button secondary" href="/categories/">Return to categories</a></div>';
+  });
+})();
+</script>
+<script type="module" src="/assets/crossingkey/ck-category-income.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#350021"/>
+      <stop offset="55%" stop-color="#11000b"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <circle cx="450" cy="340" r="138" fill="none" stroke="#ff2aa3" stroke-width="12" opacity=".78"/>
+  <path d="M210 880c42-210 438-210 480 0" fill="none" stroke="#ff2aa3" stroke-width="14" opacity=".78"/>
+  <text x="450" y="995" text-anchor="middle" fill="#d7d7df" font-family="Arial" font-size="44" letter-spacing="9">FOUNDER</text>
+</svg>

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "themeVersion": "2026.07.31",
+  "tokens": {
+    "void": "#050508",
+    "panelDeep": "#0b0b12",
+    "panel": "#101018",
+    "silver": "#d7d7df",
+    "magenta": "#ff2bd6"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": {
+        "fontSize": "0.7rem",
+        "fontWeight": 800,
+        "letterSpacing": "0.17em",
+        "color": "#d7d7df",
+        "opacity": 1,
+        "alignment": "left",
+        "glow": 0
+      },
+      "brand": {
+        "fontSize": "clamp(4.5rem, 8.9vw, 8.5rem)",
+        "fontWeight": 500,
+        "letterSpacing": "-0.08em",
+        "opacity": 1,
+        "alignment": "left",
+        "glow": 0
+      },
+      "statement": {
+        "fontSize": "clamp(2rem, 4vw, 4.35rem)",
+        "fontWeight": 400,
+        "letterSpacing": "-0.055em",
+        "opacity": 1,
+        "alignment": "left",
+        "glow": 0
+      },
+      "body": {
+        "fontSize": "clamp(1.06rem, 1.55vw, 1.25rem)",
+        "fontWeight": 400,
+        "letterSpacing": "0em",
+        "color": "#d7d7df",
+        "opacity": 1,
+        "alignment": "left",
+        "glow": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "motionVersion": "2026.07.31",
+  "respectReducedMotion": true,
+  "mobileParticleScale": 0.55,
+  "home": {
+    "hero": {
+      "enabled": false,
+      "durationMs": 0,
+      "delayMs": 0,
+      "iterations": 1,
+      "easing": "ease"
+    }
+  }
+}

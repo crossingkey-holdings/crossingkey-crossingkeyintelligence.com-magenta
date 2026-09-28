@@ -1,0 +1,18 @@
+{
+  "name": "crossingkey-elite-webgl",
+  "version": "2.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 6020 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 6020 --strictPort",
+    "studio:dev": "npm --prefix founder-studio run dev",
+    "studio:build": "npm --prefix founder-studio run build",
+    "build:all": "npm run build && npm run studio:build"
+  },
+  "devDependencies": {
+    "@fontsource/tektur": "^5.2.6",
+    "vite": "^7.3.1"
+  }
+}

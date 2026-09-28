@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <filter id="neonMagentaHover" x="-140%" y="-140%" width="380%" height="380%">
+      <feGaussianBlur stdDeviation="2.6" result="blur1"/>
+      <feColorMatrix in="blur1" type="matrix"
+        values="1 0 0 0 1
+                0 0 0 0 0.17
+                0 0 0 0 0.84
+                0 0 0 1 0" result="glow1"/>
+      <feGaussianBlur in="glow1" stdDeviation="5.4" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="neonSilverHover" x="-140%" y="-140%" width="380%" height="380%">
+      <feGaussianBlur stdDeviation="2.1" result="blur1"/>
+      <feColorMatrix in="blur1" type="matrix"
+        values="1 0 0 0 0.98
+                0 1 0 0 0.98
+                0 0 1 0 1
+                0 0 0 0.82 0" result="glow1"/>
+      <feGaussianBlur in="glow1" stdDeviation="4.2" result="glow2"/>
+      <feMerge>
+        <feMergeNode in="glow2"/>
+        <feMergeNode in="glow1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="80" height="80" fill="none"/>
+
+  <!-- Silver key -->
+  <g transform="rotate(-40 40 42)" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonSilverHover)">
+    <circle cx="40" cy="17" r="7.5" stroke="rgb(252,252,255)" stroke-width="2.5"/>
+    <path d="M40 24.5 L40 50" stroke="rgb(252,252,255)" stroke-width="2.5"/>
+    <path d="M40 50 L48.8 50 L48.8 56.5 L43 56.5 L43 63" stroke="rgb(252,252,255)" stroke-width="2.5"/>
+    <path d="M40 43 L46.8 43" stroke="rgb(252,252,255)" stroke-width="2.5"/>
+  </g>
+
+  <!-- Magenta key -->
+  <g transform="rotate(40 40 42)" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#neonMagentaHover)">
+    <circle cx="40" cy="17" r="7.5" stroke="rgb(255,43,214)" stroke-width="2.7"/>
+    <path d="M40 24.5 L40 50" stroke="rgb(255,43,214)" stroke-width="2.7"/>
+    <path d="M40 50 L48.8 50 L48.8 56.5 L43 56.5 L43 63" stroke="rgb(255,43,214)" stroke-width="2.7"/>
+    <path d="M40 43 L46.8 43" stroke="rgb(255,43,214)" stroke-width="2.7"/>
+  </g>
+</svg>

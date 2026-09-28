@@ -1,0 +1,62 @@
+.ck-about-page { padding-top: 18px; }
+.ck-about-page .ck-page-hero { max-width: 1060px; }
+.ck-about-page .ck-page-hero h1 { max-width: 1040px; }
+
+.ck-about-founder { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr); gap: clamp(30px, 6vw, 78px); align-items: center; margin: 16px 0 70px; padding: clamp(28px, 5vw, 58px); border: 1px solid rgba(218,221,235,.28); border-radius: 30px; background: linear-gradient(145deg, rgba(38,38,49,.52), rgba(9,8,14,.72) 54%, rgba(28,4,25,.48)); box-shadow: inset 0 1px rgba(255,255,255,.18), 0 0 38px rgba(230,45,145,.08); backdrop-filter: blur(16px); }
+.ck-about-founder-mark { display: grid; place-items: center; }
+.ck-about-founder-mark img { width: min(100%, 360px); filter: drop-shadow(0 0 30px rgba(255,75,195,.16)); opacity: .88; }
+.ck-about-founder-copy h2,
+.ck-about-statement h2,
+.ck-about-principles h2,
+.ck-about-now h2 { margin: 12px 0 20px; color: var(--text); font-size: clamp(2rem, 4vw, 4.1rem); font-weight: 400; line-height: 1; letter-spacing: -.05em; }
+.ck-about-founder-copy > p:not(.ck-kicker),
+.ck-about-statement > p,
+.ck-about-principles > div > p:not(.ck-kicker),
+.ck-about-now > p { color: var(--soft); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1.02rem; line-height: 1.72; }
+
+.ck-about-statement { max-width: 1050px; margin: 0 0 72px; padding-left: clamp(0px, 5vw, 70px); }
+.ck-about-statement > p { max-width: 900px; }
+
+.ck-about-constellation { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 76px; }
+.ck-about-constellation article { display: flex; flex-direction: column; min-height: 270px; padding: 23px; border: 1px solid rgba(218,221,235,.28); border-top-color: rgba(255,255,255,.46); border-radius: 22px; background: linear-gradient(145deg, rgba(38,38,49,.52), rgba(9,8,14,.68) 54%, rgba(28,4,25,.48)); box-shadow: inset 0 1px rgba(255,255,255,.16), 0 0 28px rgba(230,45,145,.06); }
+.ck-about-constellation article > p { margin: 0; color: var(--hot); font-size: .63rem; font-weight: 900; letter-spacing: .16em; }
+.ck-about-constellation h3 { margin: 20px 0 12px; color: var(--text); font-size: 1.25rem; line-height: 1.1; }
+.ck-about-constellation span { color: var(--soft); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: .9rem; line-height: 1.58; }
+.ck-about-constellation .ck-text-link,
+.ck-about-constellation em { margin-top: auto; padding-top: 22px; color: var(--hot); font-size: .78rem; font-style: normal; font-weight: 800; line-height: 1.4; }
+
+.ck-about-division-map { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin-bottom: 78px; }
+.ck-about-division-map a { display: grid; grid-template-columns: 44px 1fr 30px; align-items: center; gap: 14px; min-height: 92px; padding: 15px; border: 1px solid rgba(218,221,235,.24); border-radius: 18px; background: rgba(15,6,16,.62); transition: transform .18s ease, border-color .18s ease; }
+.ck-about-division-map a:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.62); }
+.ck-about-division-map a > span { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(255,75,195,.35); border-radius: 13px; color: var(--hot); font-size: .75rem; font-weight: 900; }
+.ck-about-division-map p { margin: 0 0 5px; color: var(--hot); font-size: .58rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.ck-about-division-map h3 { margin: 0; color: var(--text); font-size: 1rem; }
+.ck-about-division-map b { color: var(--hot); text-align: center; }
+
+.ck-about-principles { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 68px); margin-bottom: 78px; padding: clamp(28px, 5vw, 54px); border: 1px solid rgba(255,75,195,.3); border-radius: 28px; background: linear-gradient(135deg, rgba(37,4,30,.68), rgba(8,7,12,.78)); }
+.ck-about-principles ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ck-about-principles li { padding: 15px 17px; border: 1px solid rgba(218,221,235,.18); border-radius: 14px; background: rgba(7,7,11,.42); color: var(--soft); font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.55; }
+.ck-about-principles strong { color: var(--text); }
+
+.ck-about-now { margin-bottom: 60px; }
+.ck-about-now-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.ck-about-now-grid article { display: flex; flex-direction: column; min-height: 270px; padding: clamp(24px, 3vw, 36px); border: 1px solid rgba(218,221,235,.28); border-radius: 24px; background: linear-gradient(145deg, rgba(38,38,49,.52), rgba(9,8,14,.68) 54%, rgba(28,4,25,.48)); }
+.ck-about-now-grid h3 { margin: 0 0 15px; color: var(--text); font-size: 1.55rem; }
+.ck-about-now-grid p { margin: 0 0 24px; color: var(--soft); font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.65; }
+.ck-about-now-grid .ck-btn { width: fit-content; margin-top: auto; }
+
+@media (max-width: 1080px) {
+  .ck-about-constellation { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ck-about-division-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .ck-about-founder,
+  .ck-about-principles,
+  .ck-about-now-grid { grid-template-columns: 1fr; }
+  .ck-about-founder-mark img { width: min(70vw, 290px); }
+  .ck-about-constellation,
+  .ck-about-division-map { grid-template-columns: 1fr; }
+  .ck-about-constellation article { min-height: 235px; }
+  .ck-about-now-grid .ck-btn { width: 100%; }
+}
